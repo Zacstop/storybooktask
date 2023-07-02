@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { SideMenuStyles } from "./SideMenu.Desktop";
 import SideMenuItem from "./sidemenuitem/SideMenuItem";
 import { SVGProps } from "react";
+import { BrowserRouter, Route, Router } from "react-router-dom";
 
 export interface SideMenuType {
   Icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
@@ -42,59 +43,61 @@ const SideMenu = ({ sideMenuItems }: Props) => {
   };
 
   return (
-    <SideMenuStyles.Container
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      isHover={hover}
-    >
-      {sideMenuItems.map(({ Icon, title, path, submenus }, index) => {
-        const submenusLength = submenus.length;
-        if (submenusLength === 0) {
-          return (
-            <>
-              <SideMenuItem
-                key={path}
-                Icon={Icon}
-                title={title}
-                path={path}
-                isHover={hover}
-              />
-            </>
-          );
-        } else {
-          return (
-            <>
-              <SideMenuItem
-                key={path}
-                Icon={Icon}
-                title={title}
-                path={path}
-                isHover={hover}
-                onClick={() => {
-                  handleSubMenu(index);
-                }}
-              />
-              {hover &&
-                isSubMenu[index] &&
-                submenus.map(({ Icon, title, path }) => {
-                  return (
-                    <>
-                      <SideMenuItem
-                        key={path}
-                        Icon={Icon}
-                        title={title}
-                        path={path}
-                        isSubMenu={true}
-                        isHover={hover}
-                      />
-                    </>
-                  );
-                })}
-            </>
-          );
-        }
-      })}
-    </SideMenuStyles.Container>
+    <BrowserRouter>
+      <SideMenuStyles.Container
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        isHover={hover}
+      >
+        {sideMenuItems.map(({ Icon, title, path, submenus }, index) => {
+          const submenusLength = submenus.length;
+          if (submenusLength === 0) {
+            return (
+              <>
+                <SideMenuItem
+                  key={path}
+                  Icon={Icon}
+                  title={title}
+                  path={path}
+                  isHover={hover}
+                />
+              </>
+            );
+          } else {
+            return (
+              <>
+                <SideMenuItem
+                  key={path}
+                  Icon={Icon}
+                  title={title}
+                  path={path}
+                  isHover={hover}
+                  onClick={() => {
+                    handleSubMenu(index);
+                  }}
+                />
+                {hover &&
+                  isSubMenu[index] &&
+                  submenus.map(({ Icon, title, path }) => {
+                    return (
+                      <>
+                        <SideMenuItem
+                          key={path}
+                          Icon={Icon}
+                          title={title}
+                          path={path}
+                          isSubMenu={true}
+                          isHover={hover}
+                        />
+                      </>
+                    );
+                  })}
+              </>
+            );
+          }
+        })}
+      </SideMenuStyles.Container>
+    </BrowserRouter>
   );
 };
 
