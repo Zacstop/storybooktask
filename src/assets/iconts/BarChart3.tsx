@@ -1,0 +1,20 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+const SvgBarChart3 = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={24}
+    fill="none"
+    {...props}
+  >
+    <path
+      stroke="#141C24"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M16 10v7M12 7v10m-4-4v4m-3 4h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2Z"
+    />
+  </svg>
+);
+export default SvgBarChart3;

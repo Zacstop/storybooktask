@@ -1,0 +1,20 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+const SvgUserGroup = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={24}
+    fill="none"
+    {...props}
+  >
+    <path
+      stroke="#141C24"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M3 19v-1a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v1m0-8a3 3 0 1 0 0-6m6 14v-1a4 4 0 0 0-4-4h-.5M12 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+    />
+  </svg>
+);
+export default SvgUserGroup;

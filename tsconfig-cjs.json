@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig-esm.json",
+  "compilerOptions": {
+    "target": "es5",
+    "module": "CommonJS",
+    "outDir": ".lib/cjs",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "files": ["src/components/index.ts"],
+  "include": [
+    "src/components/*.ts",
+    "src/types/custom.d.ts",
+    "src/assets/icon/*.svg"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.stories.tsx",
+    "**/*.test.tsx",
+    "**/*.test.ts"
+  ],
+  "references": [{ "path": "tsconfig.node.json" }]
+}
