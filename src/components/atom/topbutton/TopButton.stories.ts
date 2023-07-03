@@ -13,7 +13,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: 'top',
     onClick: () => document.documentElement.scrollTop = 0
   },
 };

@@ -18,7 +18,8 @@
     "build:esm": "tsc -p tsconfig-esm.json",
     "build:cjs": "tsc -p tsconfig-cjs.json",
     "svg-compile": "npx @svgr/cli ./src/assets/icon --out-dir ./src/assets/iconts --typescript",
-    "publish:npm": "rm -rf .lib && npm run build:esm && npm run build:cjs && npm publish --access public"
+    "publish:npm": "rm -rf .lib && npm run build:esm && npm run build:cjs && npm publish --access public",
+    "chromatic": "npx chromatic --project-token=chpt_5e6c47b9f272b9c"
   },
   "dependencies": {
     "commander": "^11.0.0",
@@ -56,5 +57,7 @@
   },
   "description": "",
   "keywords": [],
-  "author": ""
+  "author": "",
+  "readme": "ERROR: No README data found!",
+  "_id": "cro-joon-frontend-components-story@0.0.1"
 }

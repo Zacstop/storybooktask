@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { SideMenuStyles } from "./SideMenu.Desktop";
 import SideMenuItem from "./sidemenuitem/SideMenuItem";
 import { SVGProps } from "react";
-import { BrowserRouter, Route, Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 export interface SideMenuType {
   Icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
